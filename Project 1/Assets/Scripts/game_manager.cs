@@ -18,23 +18,26 @@ public class game_manager : MonoBehaviour
         Cursor.visible = false;
         StartCoroutine(LevelStartWait());
         playerScript.onGameOver += gameOver;
+        playerScript.onGameRestart += gameRestart;
     }
 
     private void gameOver(object sender, player_movement.onGameOverEventArgs e) {
-        //Debug.Log("Game over");
         Cursor.visible = true;
         finalScoreScript.SetFinalScore(e.UIscore);
         gameOverUI.SetActive(true);
     }
 
+    private void gameRestart(object sender, EventArgs e)
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     // Update is called once per frame
     void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.Escape)){
             GoToMainMenu();
         }
-        
     }
 
     IEnumerator LevelStartWait(){

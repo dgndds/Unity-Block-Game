@@ -12,18 +12,16 @@ public class player_movement : MonoBehaviour
     private float playerScore = 0;
 
     public EventHandler<onGameOverEventArgs> onGameOver;
+    public EventHandler onGameRestart;
     public class onGameOverEventArgs : EventArgs
     {
         public float UIscore;
     }
 
-    public
-
     // Start is called before the first frame update
     void Start()
     {
         Time.timeScale = 0f;
-        //rigidb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -48,7 +46,8 @@ public class player_movement : MonoBehaviour
         if (collision.collider.gameObject.tag == "enemy")
         {
             //Restart level
-            restartLevel();
+            playerScore = 0;
+            onGameRestart?.Invoke(this, EventArgs.Empty);
         }
     }
 
@@ -57,22 +56,17 @@ public class player_movement : MonoBehaviour
         if (other.gameObject.tag == "end_line")
         {
             //End level
-            // gameOver();
             onGameOver?.Invoke(this, new onGameOverEventArgs { UIscore = playerScore });
 
         } else if(other.gameObject.tag == "despawner")
         {
-            restartLevel();
+            //Restart Level
+            playerScore = 0;
+            onGameRestart?.Invoke(this, EventArgs.Empty);
         }
     }
 
     public float getScore(){
         return playerScore;
-    }
-    
-    private void restartLevel(){
-        playerScore = 0;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        
     }
 }

@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 3eb64ee28d04bef4dbbf78b76b876df4
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Lordcorps
+  fontNames:
+  - Lordcorps
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: a2eb641e3c1ac8d47bdfd42f6dfb3095, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

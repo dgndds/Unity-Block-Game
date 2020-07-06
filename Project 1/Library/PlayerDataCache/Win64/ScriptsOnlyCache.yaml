@@ -1221,5 +1221,4 @@ ScriptsOnlyBuild:
   - Assets/Levels/Level 7.unity
   - Assets/Levels/Level 8.unity
   - Assets/Levels/credits.unity
-  playerPath: E:/GG games/Unity-Block-Game/Project 1/build/MonoBleedingEdge/Project
-    1.exe
+  playerPath: E:/GG games/Unity-Block-Game/Project 1/build/Project 1.exe
